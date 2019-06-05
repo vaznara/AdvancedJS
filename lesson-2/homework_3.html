@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hamburger</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/homework.css">
+</head>
+<body>
+<div class="burger__wrapper">
+    <img class="burger-img" src="https://d9hyo6bif16lx.cloudfront.net/live/img/production/detail/menu/lunch-dinner_burgers_all-american-burger.jpg"
+         alt="">
+    <div class="container">
+        <h2>Выберите размер бургера</h2>
+        <div class="checkbox__wrapper">
+            <label class="label__text">Маленький
+                <input type="radio" checked="checked" name="size" data-id="0">
+                <span class="checkmark"></span>
+            </label>
+            <label class="label__text">Большой
+                <input type="radio" name="size" data-id="1">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Выберите Начинку</h2>
+        <div class="checkbox__wrapper">
+            <label class="label__text">С сыром
+                <input type="radio" checked="checked" name="filling" data-id="0">
+                <span class="checkmark"></span>
+            </label>
+            <label class="label__text">С салатом
+                <input type="radio" name="filling" data-id="1">
+                <span class="checkmark"></span>
+            </label>
+            <label class="label__text">С картофелем
+                <input type="radio" name="filling" data-id="2">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Выберите Топпинг</h2>
+        <div class="checkbox__wrapper">
+            <label class="label__text">Приправа
+                <input type="checkbox" name="topping" data-id="0">
+                <span class="checkmark-box"></span>
+            </label>
+            <label class="label__text">Майонез
+                <input type="checkbox" name="topping" data-id="0">
+                <span class="checkmark-box"></span>
+            </label>
+        </div>
+    </div>
+    <button class="submit-btn">Рассчитать</button>
+    <div class="sum__text"></div>
+</div>
+<script src="js/homework_3.js"></script>
+</body>
+</html>
