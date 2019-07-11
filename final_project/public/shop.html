@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand E-Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="app">
+    <header-template ref="header"></header-template>
+    <navigation-template></navigation-template>
+<section class="breadcrumb">
+    <div class="container breadcrumb">
+        <div class="current__title">
+            <p>New Arrivals </p>
+        </div>
+        <div class="breadcrumb__list">
+            <ul class="breadcrumb__list__vertical">
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Home</a></li>
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Men</a></li>
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link"><span>New Arrivals</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="products__section">
+    <div class="container table__container">
+        <div class="categories__menu">
+            <details open class="categorie">
+                <summary>Category</summary>
+                <ul class="cat__menu">
+                    <li class="cat__menu__item">Accessories</li>
+                    <li class="cat__menu__item">Bags</li>
+                    <li class="cat__menu__item">Denim</li>
+                    <li class="cat__menu__item">Hoodies &amp; Sweatshirts</li>
+                    <li class="cat__menu__item">Jackets &amp; Coats</li>
+                    <li class="cat__menu__item">Pants</li>
+                    <li class="cat__menu__item">Polos</li>
+                    <li class="cat__menu__item">Shirts</li>
+                    <li class="cat__menu__item">Shoes</li>
+                    <li class="cat__menu__item">Shorts</li>
+                    <li class="cat__menu__item">Sweaters &amp; Knits</li>
+                    <li class="cat__menu__item">T-Shirts</li>
+                    <li class="cat__menu__item">Tanks</li>
+                </ul>
+            </details>
+            <details class="categorie">
+                <summary>Brand</summary>
+            </details>
+            <details class="categorie">
+                <summary>Designer</summary>
+            </details>
+        </div>
+        <div class="products__wrapper">
+        <div class="products__filters">
+            <div class="filter__trending">
+                <h2 class="filter__heading">trending now</h2>
+                <ul class="trending__list">
+                    <li class="trending__list__item"><a href="#">Bohemian</a></li>
+                    <li class="trending__list__item"><a href="#">Floral</a></li>
+                    <li class="trending__list__item"><a href="#">Lace</a></li>
+                    <li class="trending__list__item"><a href="#">Floral</a></li>
+                    <li class="trending__list__item"><a href="#">Lace</a></li>
+                    <li class="trending__list__item"><a href="#">Bohemian</a></li>
+                </ul>
+            </div>
+            <div class="filter__size">
+                <fieldset class="size__select">
+                    <legend><h2 class="filter__heading">Size</h2></legend>
+                    <label for="xxs">
+                        <input id="xxs" type="checkbox">XXS</label>
+                    <label for="xs">
+                        <input id="xs" type="checkbox">XS</label>
+                    <label for="s">
+                        <input id="s" type="checkbox">S</label>
+                    <label for="m">
+                        <input id="m" type="checkbox">M</label><br>
+                    <label for="l">
+                        <input id="l" type="checkbox">L</label>
+                    <label for="xl">
+                        <input id="xl" type="checkbox">XL</label>
+                    <label for="xxl">
+                        <input id="xxl" type="checkbox">XXL</label>
+                </fieldset>
+            </div>
+            <div class="filter__price">
+                <label for="range"><h2 class="filter__heading">Price</h2></label>
+                <input id="range" type="range" list="tickmarks" value="52" step="10" min="20" max="400">
+                <datalist id="tickmarks">
+                    <option value="0" label="0%">
+                    <option value="10">
+                    <option value="20">
+                    <option value="30">
+                    <option value="40">
+                    <option value="50" label="50%">
+                    <option value="60">
+                    <option value="70">
+                    <option value="80">
+                    <option value="90">
+                    <option value="100" label="100%">
+                </datalist>
+            </div>
+
+
+        </div>
+        <div class="products__sort">
+            <label for="name">Sort By</label>
+            <select id="name" class="sort__margin">
+                <option value="name" selected>Name</option>
+                <option value="name">Price</option>
+            </select>
+            <label for="year">Show</label>
+            <select id="year">
+                <option value="year" selected>09</option>
+                <option value="year">08</option>
+            </select>
+        </div>
+        <div class="products__page">
+            <div class="product__card" v-for="product of products.slice(0, shopProductCount)" :key="product.id_product">
+                <a href="product_page.html" class="product__link">
+                    <div class="product__img"><img :src="product.product_img" :alt="product.product_name"></div>
+                    <div class="product__text">
+                        <p class="product__name">{{ product.product_name }}</p>
+                        <p class="product__price">${{ product.price }}</p>
+                    </div>
+                </a>
+                <div class="product__addtocart">
+                    <button @click="$root.$refs.header.$refs.cart.addProduct(product)" class="addtocart__link"><img src="images/cart-white.svg" alt="cart">&nbsp;&nbsp;Add to
+                        cart</button>
+                    <button class="addtocart__link dopbtn"><img src="images/refresh.svg" alt="refresh"></button>
+                    <button class="addtocart__link dopbtn"><img src="images/heart.svg" alt="favourite"></button>
+                </div>
+            </div>
+            <div class="products__page__nav">
+                <div class="product__pages">
+                    <ul class="page__nav">
+                        <li class="page__nav__item"><a href="#" class="page__nav__link"><span
+                                class="page__arrow">&lt;</span></a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link"><span>1</span></a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">2</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">3</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">4</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">5</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">6</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">.....</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link">20</a></li>
+                        <li class="page__nav__item"><a href="#" class="page__nav__link"><span
+                                class="page__arrow">&gt;</span></a></li>
+                    </ul>
+                </div>
+                <a href="#">
+                    <div class="button view_all">View All</div>
+                </a>
+            </div></div>
+        </div>
+    </div>
+</section>
+<section class="promo__block__horizontal">
+    <div class="container promo__block__hr">
+        <div class="promo__text__hr">
+            <div class="promo__hr__col">
+                <ul class="promo__list">
+                    <li class="promo__list__item__hr item1">
+                        <h1>Free Delivery</h1>
+                        <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                            models.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="promo__hr__col">
+                <ul class="promo__list">
+                    <li class="promo__list__item__hr item2">
+                        <h1>Sales &amp; discounts</h1>
+                        <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                            models.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="promo__hr__col">
+                <ul class="promo__list">
+                    <li class="promo__list__item__hr item3">
+                        <h1>Quality assurance</h1>
+                        <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive
+                            models.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+    <subscribe-template></subscribe-template>
+    <footer-template></footer-template>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/subscribe.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/cartComponent.js"></script>
+<script src="js/cartPageComponent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

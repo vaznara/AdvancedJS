@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand E-Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="app">
+    <header-template ref="header"></header-template>
+    <navigation-template></navigation-template>
+<section class="breadcrumb">
+    <div class="container breadcrumb">
+        <div class="current__title">
+            <p>New Arrivals </p>
+        </div>
+        <div class="breadcrumb__list">
+            <ul class="breadcrumb__list__vertical">
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Home</a></li>
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Men</a></li>
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link"><span>New Arrivals</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="checkout">
+    <div class="container">
+        <div class="checkout__spoiler">
+            <h2 class="info__headings main__heading">01. Shipping Adress</h2>
+            <div class="info__spoiler">
+                <div class="info__checkout">
+                    <h2 class="info__headings">Check as a guest or register</h2>
+                    <p class="sub__details">Register with us for future convenience</p>
+                    <div class="radio__form">
+                        <h2 class="info__headings"><input type="radio" name="checkout__option" value="checkout as guest"
+                                                          style="margin-right: 14px">checkout
+                            as guest</h2>
+                        <h2 class="info__headings"><input type="radio" name="checkout__option" value="register" checked
+                                                          style="margin-right: 14px">Register
+                        </h2></div>
+                    <h2 class="info__headings">register and save time!</h2>
+                    <p class="sub__details">Register with us for future convenience</p>
+                    <ul class="sub__details sub__list">
+                        <li class="sub__details_item">Fast and easy checkout</li>
+                        <li class="sub__details_item">Easy access to your order history and status</li>
+                    </ul>
+                    <input class="grey__btn" type="submit" onclick="" value="Continue" style="cursor: pointer">
+                </div>
+                <div class="info__register">
+                    <h2 class="info__headings">Already registed?</h2>
+                    <p class="sub__details">Please log in below</p>
+                    <div class="email__input"><label class="info__headings" for="email">EMAIL ADDRESS
+                        <sup>*</sup></label><br><br>
+                        <input type="email" id="email" name="login"></div>
+                    <div class="pass__input"><label for="password" class="info__headings">PASSWORD
+                        <sup>*</sup></label><br><br>
+                        <input type="password" id="password" name="login"></div>
+                    <p class="sub__details"><span>* Required Fileds</span></p>
+                    <div class="login__div">
+                        <input class="grey__btn" type="submit" onclick="" value="Log In" style="cursor: pointer">
+                        <a href="#" class="frgt__pass">Forgot Password ?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="checkout__spoiler">
+            <h2 class="info__headings main__heading margin__none">02. BILLING INFORMATION</h2>
+        </div>
+        <div class="checkout__spoiler">
+            <h2 class="info__headings main__heading margin__none">03. SHIPPING INFORMATION</h2>
+        </div>
+        <div class="checkout__spoiler">
+            <h2 class="info__headings main__heading margin__none">04. SHIPPING METHOD</h2>
+        </div>
+        <div class="checkout__spoiler">
+            <h2 class="info__headings main__heading margin__none">05. PAYMENT METHOD</h2>
+        </div>
+        <div class="checkout__spoiler">
+            <h2 class="info__headings main__heading margin__none">06. ORDER REVIEW</h2>
+        </div>
+    </div>
+</section>
+    <subscribe-template></subscribe-template>
+    <footer-template></footer-template>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/subscribe.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/cartComponent.js"></script>
+<script src="js/cartPageComponent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="app">
+    <header-template ref="header"></header-template>
+    <navigation-template></navigation-template>
+    <section class="main__banner">
+        <div class="container banner">
+            <div class="banner__content">
+                <p class="slogan__big">THE BRAND</p>
+                <p class="slogan__small">OF LUXERIOUS <span>FASHION</span></p>
+            </div>
+        </div>
+    </section>
+    <section class="offers">
+        <div class="container cat__banners">
+            <div class="cat__banner__item">
+                <a class="cat_banner_link" href="#">
+                    <div class="cat__banner__img"><img src="images/cat-1.jpg" alt="category"></div>
+                    <div class="banner__headline">
+                        <p class="small__header">hOT dEAL</p>
+                        <p class="big__header">FOR MEN</p>
+                    </div>
+                </a>
+            </div>
+            <div class="cat__banner__item">
+                <a class="cat_banner_link" href="#">
+                    <div class="cat__banner__img"><img src="images/cat-2.jpg" alt="category"></div>
+                    <div class="banner__headline">
+                        <p class="small__header">30% offer</p>
+                        <p class="big__header">women</p>
+                    </div>
+                </a>
+            </div>
+            <div class="cat__banner__item">
+                <a class="cat_banner_link" href="#">
+                    <div class="cat__banner__img"><img src="images/cat-3.jpg" alt="category"></div>
+                    <div class="banner__headline">
+                        <p class="small__header">LUXIROUS &amp; trendy</p>
+                        <p class="big__header">ACCESORIES</p>
+                    </div>
+                </a>
+            </div>
+            <div class="cat__banner__item">
+                <a class="cat_banner_link" href="#">
+                    <div class="cat__banner__img"><img src="images/cat-4.jpg" alt="category"></div>
+                    <div class="banner__headline">
+                        <p class="small__header">new arrivals</p>
+                        <p class="big__header">FOR kids</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="featured">
+        <div class="container">
+            <div class="products__header">
+                <h1>Fetured Items</h1>
+                <p class="description">Shop for items based on what we featured in this week</p>
+            </div>
+            <div class="products">
+                <div class="product__card" v-for="product of products.slice(0,featuredCount)" :key="product.id_product">
+                    <a href="product_page.html" class="product__link">
+                        <div class="product__img"><img :src="product.product_img" alt="product.product_name"></div>
+                        <div class="product__text">
+                            <p class="product__name">{{product.product_name}}</p>
+                            <p class="product__price">${{product.price}}</p>
+                        </div>
+                    </a>
+                    <div class="product__addtocart">
+                        <button @click="$root.$refs.header.$refs.cart.addProduct(product)" class="addtocart__link"><img src="images/cart-white.svg" alt="Add to cart">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="button__wrapper"><a class="button" href="shop.html">Browse all products<i class="fas fa-long-arrow-alt-right"></i></a></div>
+        </div>
+    </section>
+    <section class="promo__block">
+        <a href="#" class="promo__block_link">
+            <div class="container">
+                <div class="promo__banner">
+                    <div class="promo__banner__text">
+                        <div class="banner__text__big">30% <span>OFFER</span></div>
+                        <div class="banner__text__small">FOR WOMEN</div>
+                    </div>
+                </div>
+                <div class="promo__text">
+                    <ul class="promo__list">
+                        <li class="promo__list__item item1">
+                            <h1>Free Delivery</h1>
+                            <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with
+                                extensive
+                                models.</p>
+                        </li>
+                    </ul>
+                    <ul class="promo__list">
+                        <li class="promo__list__item item2">
+                            <h1>Sales &amp; discounts</h1>
+                            <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with
+                                extensive
+                                models.</p>
+                        </li>
+                    </ul>
+                    <ul class="promo__list">
+                        <li class="promo__list__item item3">
+                            <h1>Quality assurance</h1>
+                            <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with
+                                extensive
+                                models.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </a>
+    </section>
+    <subscribe-template></subscribe-template>
+    <footer-template></footer-template>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/subscribe.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/cartComponent.js"></script>
+<script src="js/cartPageComponent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

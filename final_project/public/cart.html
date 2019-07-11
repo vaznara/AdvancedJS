@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand E-Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="app">
+    <header-template ref="header"></header-template>
+    <navigation-template></navigation-template>
+    <section class="breadcrumb">
+        <div class="container breadcrumb">
+            <div class="current__title">
+                <p>New Arrivals </p>
+            </div>
+            <div class="breadcrumb__list">
+                <ul class="breadcrumb__list__vertical">
+                    <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Home</a></li>
+                    <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Men</a></li>
+                    <li class="breadcrumb__list__item"><a href="#"
+                                                          class="breadcrumb__link"><span>New Arrivals</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <cart-page></cart-page>
+    <subscribe-template></subscribe-template>
+    <footer-template></footer-template>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/subscribe.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/cartComponent.js"></script>
+<script src="js/cartPageComponent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Brand E-Store</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+<div id="app">
+    <header-template ref="header"></header-template>
+    <navigation-template></navigation-template>
+<section class="breadcrumb">
+    <div class="container breadcrumb">
+        <div class="current__title">
+            <p>New Arrivals </p>
+        </div>
+        <div class="breadcrumb__list">
+            <ul class="breadcrumb__list__vertical">
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Home</a></li>
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link">Men</a></li>
+                <li class="breadcrumb__list__item"><a href="#" class="breadcrumb__link"><span>New Arrivals</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="single_product">
+    <div class="container__wide product_bg">
+        <div class="container">
+            <div class="products__page">
+                <img src="images/product_big.jpg" alt="product" class="big__product">
+                <div class="slide__btn slide__left"></div>
+                <div class="slide__btn slide__right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="product__desc">
+            <h3 class="product__collection">WOMEN COLLECTION</h3>
+            <h2 class="product__headline">Moschino Cheap And Chic</h2>
+            <p class="product__bigtext">Compellingly actualize fully researched processes before proactive outsourcing.
+                Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize
+                parallel core competencies rather than exceptional portals. </p>
+            <div class="product__bigtextflex">
+                <p class="product__bigtext"><b>MATERIAL: <span>COTTON</span></b></p>
+                <p class="product__bigtext"><b>DESIGNER: <span>BINBURHAN</span></b></p>
+            </div>
+            <p class="product__price single__price">$561</p>
+            <div class="product__properties">
+                <div class="filter choose__color">
+                    <label for="color">CHOOSE COLOR</label><br>
+                    <div class="custom__select">
+                        <select id="color" class="sort__margin">
+                            <option value="name" selected>Red</option>
+                            <option value="name">Blue</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter choose__size">
+                    <label for="size">CHOOSE SIZE</label><br>
+                    <div class="custom__select">
+                        <select id="size" class="sort__margin">
+                            <option value="name" selected>XXL</option>
+                            <option value="name">XL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter choose__quant">
+                    <label for="quantity">QUANTITY</label><br>
+                    <input id="quantity" type="text" value="2">
+                </div>
+
+            </div>
+            <a href="#">
+                <div class="view_all addtocart__btn"><img class="cart__img" src="images/cart_red.svg" alt="cart">Add to
+                    cart
+                </div>
+            </a>
+        </div>
+        <div class="products__suggestion">
+            <h2 class="block__heading">you may like also</h2>
+            <div class="products__page">
+                <div class="product__card" v-for="product of products.slice(8, 12)" :key="product.id_product">
+                    <a href="product_page.html" class="product__link">
+                        <div class="product__img"><img :src="product.product_img" alt="product.product_name"></div>
+                        <div class="product__text">
+                            <p class="product__name product__likelist">{{ product.product_name }}</p>
+                            <p class="product__price">${{ product.price }}</p>
+                        </div>
+                    </a>
+                    <div class="product__addtocart">
+                        <button @click="$root.$refs.header.$refs.cart.addProduct(product)" class="addtocart__link"><img src="images/cart-white.svg" alt="cart">&nbsp;&nbsp;Add
+                            to
+                            cart</button>
+                        <!--<a href="#" class="addtocart__link dopbtn"><img src="images/refresh.svg" alt="refresh"></a>
+                        <a href="#" class="addtocart__link dopbtn"><img src="images/heart.svg" alt="favourite"></a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <subscribe-template></subscribe-template>
+    <footer-template></footer-template>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/subscribe.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/cartComponent.js"></script>
+<script src="js/cartPageComponent.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
