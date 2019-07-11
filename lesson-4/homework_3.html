@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form-style-2">
+    <div class="form-style-2-heading">Форма обратной связи</div>
+    <form action="" method="post">
+        <div class="field__row"><label for="name"><span>Имя <span class="required">*</span></span><input
+                data-name="name" id="name" type="text" class="input-field" name="field1" value=""/></label>
+            <p class="error_text" data-name="name"></p></div>
+        <div class="field__row"><label for="email"><span>Email <span class="required">*</span></span><input
+                data-email="email" id="email" type="text" class="input-field" name="field2" value=""/></label>
+            <p class="error_text" data-email="email"></p></div>
+        <div class="field__row"><label for="phone"><span>Телефон <span class="required">*</span></span><input
+                data-phone="phone" id="phone" type="tel" class="input-field" name="field3" value=""/></label>
+            <p class="error_text" data-phone="phone"></p></div>
+        <div class="field__row"><label for="text"><span>Текст </span><textarea data-text="text" id="text" name="field4" class="textarea-field"></textarea></label>
+        </div>
+
+        <label class="submit_btn"><span> </span><input type="submit" value="Отправить"/></label>
+    </form>
+</div>
+<script src="form.js"></script>
+</body>
+</html>
